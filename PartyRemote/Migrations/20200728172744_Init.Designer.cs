@@ -3,13 +3,14 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PartyRemote.Data;
 
 namespace PartyRemote.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20200728160552_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200728172744_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

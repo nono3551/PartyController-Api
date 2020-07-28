@@ -1,17 +1,34 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using PartyRemote.Data;
+using PartyRemote.Data.Models;
 
 namespace PartyRemote.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class SessionsController : ControllerBase
     {
+        private readonly DatabaseContext _dbContext;
+
+        public SessionsController(DatabaseContext context)
+        {
+            this._dbContext = context;
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<PartySession>> Get()
         {
-            return new string[] { "value12", "value2" };
+            _dbContext.Add(new PartySession()
+            {
+                Title = "Test"
+            });
+
+            _dbContext.SaveChanges();
+
+            return _dbContext.PartySessions.Take(5).ToList();
         }
 
         // GET api/values/5

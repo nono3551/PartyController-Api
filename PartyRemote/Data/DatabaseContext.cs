@@ -5,8 +5,11 @@ namespace PartyRemote.Data
 {
     public class DatabaseContext : DbContext
     {
-        public DbSet<PartySession> PartySessions { get; set; }
+        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
+        {
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlite("Data Source=database.db");
+        }
+
+        public DbSet<PartySession> PartySessions { get; set; }
     }
 }
