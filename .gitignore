@@ -340,4 +340,4 @@ ASALocalRun/
 healthchecksdb
 dist/
 
-*databese.db
+*.db
