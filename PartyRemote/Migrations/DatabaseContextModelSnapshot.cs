@@ -22,6 +22,24 @@ namespace PartyRemote.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Author")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CurrentSong")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("OwnerPassword")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("QueuePassword")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SongsCount")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
 

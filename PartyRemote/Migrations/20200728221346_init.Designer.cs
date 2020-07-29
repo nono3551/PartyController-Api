@@ -9,8 +9,8 @@ using PartyRemote.Data;
 namespace PartyRemote.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20200728172744_Init")]
-    partial class Init
+    [Migration("20200728221346_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,24 @@ namespace PartyRemote.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
+
+                    b.Property<string>("Author")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CurrentSong")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("OwnerPassword")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("QueuePassword")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SongsCount")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
